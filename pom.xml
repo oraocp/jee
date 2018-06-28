@@ -1,0 +1,221 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v3_5_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cc.31415926</groupId>
+    <artifactId>jee</artifactId>
+    <packaging>war</packaging>
+    <version>0.1</version>
+    <url>http://www.31415926.cc</url>
+    <name>jee</name>
+    <organization>
+        <name>cc.31415926</name>
+        <url>http://www.31415926.cc/</url>
+    </organization>
+    <properties>
+        <java.version>1.7</java.version>
+        <tomcat.version>8.0.47</tomcat.version>
+        <servlet-api.version>3.0.1</servlet-api.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 安全框架 -->
+        <shiro.version>1.4.0</shiro.version>
+        <!-- 全文检索组件 -->
+        <lucene.version>3.0.3</lucene.version>
+        <activation.version>1.0.2</activation.version>
+        <antlr.version>2.7.7</antlr.version>
+        <aopalliance.version>1.0</aopalliance.version>
+        <ant.version>1.8.4</ant.version>
+        <aspectj.version>1.8.12</aspectj.version>
+        <axis.version>1.4</axis.version>
+
+        <nodep.version>2.2.2</nodep.version>
+        <commons-cli.version>1.4</commons-cli.version>
+        <commons-codec.version>1.11</commons-codec.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-discovery.version>0.5</commons-discovery.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <commons-net.version>2.2</commons-net.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <druid.version>1.1.5</druid.version>
+        <ehcache-core.version>2.6.11</ehcache-core.version>
+        <ezmorph.version>1.0.6</ezmorph.version>
+        <httpclient.version>4.5.3</httpclient.version>
+        <httpcore.version>4.4.8</httpcore.version>
+
+        <slf4j.version>1.7.25</slf4j.version>
+        <javassist.version>3.22.0-GA</javassist.version>
+        <freemarker.version>2.3.25-incubating</freemarker.version>
+        <hibernate-commons-annotations.version>4.0.5.Final</hibernate-commons-annotations.version>
+        <hibernate.version>4.3.11.Final</hibernate.version>
+        <hibernate-jpa.version>1.0.0.Final</hibernate-jpa.version>
+        <htmlparser.version>1.6</htmlparser.version>
+        <jboss-logging.version>3.3.1.Final</jboss-logging.version>
+        <jcaptcha.version>1.0</jcaptcha.version>
+        <jdom.version>1.1</jdom.version>
+        <jmagick.version>6.6.9</jmagick.version>
+        <mailapi.version>1.6.0</mailapi.version>
+        <json.version>20171018</json.version>
+        <mysql.version>5.1.44</mysql.version>
+        <quartz.version>2.1.7</quartz.version>
+        <jta.verson>1.1</jta.verson>
+        <openoffice.version>3.2.1</openoffice.version>
+        <logback.version>1.2.3</logback.version>
+        <spring.version>4.3.16.RELEASE</spring.version>
+        <wsdl4j.version>1.5.3</wsdl4j.version>
+        <zxing.version>2.3.0</zxing.version>
+        <bouncycastle.version>1.45</bouncycastle.version>
+        <gson.version>2.8.2</gson.version>
+        <joda-time.version>2.3</joda-time.version>
+        <jackson-core.version>2.7.4</jackson-core.version>
+        <jackson-databind.version>2.7.4</jackson-databind.version>
+        <jackson-annotations.version>2.7.4</jackson-annotations.version>
+    </properties>
+
+    <!-- 第三方依赖库包 -->
+    <dependencies>
+
+        <!--============== slf4j日志框架依赖库 =============-->
+
+        <!-- slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 桥接jcl日志框架commons-logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jeecgframework</groupId>
+            <artifactId>minidao-pe</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
+        <!--============== 数据库驱动依赖库 =============-->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!--============== Spring框架依赖库 =============-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!--============== 测试用依赖库 =============-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>jee</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/java/</directory>
+                <includes>
+                    <include>**/*.hbm.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- 指定jdk1.7编译，否则maven update 可能调整jdk-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <description>jee是jeecms网站内容管理系统开源的复制版本，去除JDK Deprecated的代码，优化程序配置</description>
+</project>
